@@ -1,3 +1,23 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">Add Contact Form</h2>
+
+<h4>First Name</h4>
+{{input name='firstName' value = contact.firstName placeholder = 'First Name'}}
+
+<h4>Surname</h4>
+{{input name='surName' value = contact.surName placeholder = 'Surname'}}
+
+<h4>Phone Number</h4>
+{{input name='phoneNumber' value = contact.phoneNumber placeholder = '0123456789'}}
+
+<h4>Mobile Number</h4>
+{{input name='mobileNumber' value = contact.mobileNumber placeholder = '0123456789'}}
+
+<button onclick={{action 'addContact'}}>Add Contact</button>
+
+{{#each model as |contact|}}
+    {{table-field contact.fullName=firstName contact.phone=phoneNumber contact.mobile=mobileNumber }}
+{{/each}}
+
+
 
 {{outlet}}
